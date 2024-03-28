@@ -20,4 +20,4 @@ jobs:
           git config --global user.name 'Chandan Kalita'
           git config --global user.email 'ck3196686@gmail.com'
           git commit -am "auto - Version updated"
-          git push origin HEAD:
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
