@@ -20,6 +20,7 @@ jobs:
         run: |
           git config --global user.name 'Chandan Kalita'
           git config --global user.email 'ck3196686@gmail.com'
-          git checkout origin/${{github.event.pull_request.head.ref}}
+          git pull
+          git checkout ${{github.event.pull_request.head.ref}}
           git commit -am "auto - Version updated"
-          git push origin origin/${{github.event.pull_request.head.ref}}
+          git push origin ${{github.event.pull_request.head.ref}}
