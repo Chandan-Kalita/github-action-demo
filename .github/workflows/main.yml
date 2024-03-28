@@ -1,11 +1,21 @@
 name: Version Update On PR
 on:
   pull_request:
-    branches: "master"
-    types: "opened"
+    branches: ["master"]
+    types: ["opened"]
 
-jobs:   
+jobs:
   Update-Version:
     runs-on: ubuntu-latest
-    steps: 
-      - run: echo "PR opened"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          node-version: '20'
+      - name: Updating Version
+        run: node update-version.js
+      - name: Commit with version
+        run: |
+          git config --global user.name 'Chandan Kalita'
+          git config --global user.email 'ck3196686@gmail.com'
+          git commit -am "auto - Version updated"
+          git push
