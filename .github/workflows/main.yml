@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: '20'
       - uses: actions/checkout@v4
+        with:
+          ref: ${{github.head_ref}}
       - run: |
           node update-version.js
           git config user.name 'Chandan Kalita'
