@@ -15,11 +15,11 @@ jobs:
       - name: Updating Version
         run: node update-version.js
       - name: Log
-        run: echo ${{github.event.pull_request}}
+        run: echo ${{github.head_ref}}
       - name: Commit with version
         run: |
           git config --global user.name 'Chandan Kalita'
           git config --global user.email 'ck3196686@gmail.com'
-          git checkout ${{github.event.pull_request.base.ref}}
+          git checkout ${{github.event.pull_request.head.ref}}
           git commit -am "auto - Version updated"
-          git push origin ${{github.event.pull_request.base.ref}}
+          git push origin ${{github.event.pull_request.head.ref}}
