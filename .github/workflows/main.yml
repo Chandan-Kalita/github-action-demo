@@ -1,0 +1,11 @@
+name: Version Update On PR
+on:
+  pull_request:
+    branches: "master"
+    types: "opened"
+
+jobs:   
+  Update-Version:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "PR opened"
