@@ -8,19 +8,14 @@ jobs:
   Update-Version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Updating Version
-        run: node update-version.js
-      - name: Log
-        run: echo ${{github.head_ref}}
-      - name: Commit with version
-        run: |
-          git config --global user.name 'Chandan Kalita'
-          git config --global user.email 'ck3196686@gmail.com'
-          git pull origin ${{github.head_ref}}
-          git checkout ${{github.head_ref}}
-          git commit -am "auto - Version updated"
-          git push origin ${{github.head_ref}}
+      - uses: actions/checkout@v4
+      - run: |
+          node update-version.js
+          git config user.name 'Chandan Kalita'
+          git config user.email 'ck3196686@gmail.com'
+          git add .
+          git commit -m "auto - Version updated"
+          git push
