@@ -14,6 +14,8 @@ jobs:
           node-version: '20'
       - name: Updating Version
         run: node update-version.js
+      - name: Log
+        run: echo ${{github.event.pull_request}}
       - name: Commit with version
         run: |
           git config --global user.name 'Chandan Kalita'
