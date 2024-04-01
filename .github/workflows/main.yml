@@ -15,9 +15,9 @@ jobs:
       - run: ls
       - run: pwd
       # - name: Download here-sdk
-      #   run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fhere-sdk.zip?alt=media&token=86857fd1-df48-428b-a086-de76c4af8662 -O here-sdk.zip
+      #   run: wget "https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fhere-sdk.zip?alt=media&token=86857fd1-df48-428b-a086-de76c4af8662" -O here-sdk.zip
       - name: Download key.jks
-        run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.jks?alt=media&token=fe28aa79-4574-4b47-bb9d-1024b144c1b4 -O key.jks
+        run: wget "https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.jks?alt=media&token=fe28aa79-4574-4b47-bb9d-1024b144c1b4" -O key.jks
       - name: Download key.properties
-        run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.properties?alt=media&token=5749b5dd-81db-42cb-88db-99384b2f538f -O key.properties
+        run: wget "https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.properties?alt=media&token=5749b5dd-81db-42cb-88db-99384b2f538f" -O key.properties
       - run: ls
