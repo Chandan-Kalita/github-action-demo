@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-      - run: cwd
       - name: Download here-sdk
         run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fhere-sdk.zip?alt=media&token=89d447c5-43ef-4924-a4c1-b241cd9218c7
       - name: Download key.jks
@@ -21,5 +20,4 @@ jobs:
         with:
           ref: ${{github.head_ref}}
       - run: pwd
-      - run: cwd
       - run: ls
