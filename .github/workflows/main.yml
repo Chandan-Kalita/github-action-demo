@@ -1,23 +1,25 @@
 name: Version Update On PR
 on:
-  pull_request:
-    branches: ["master"]
-    types: ["opened"]
+  push:
+    branches: 
+      - 'master'
 
 jobs:
   Update-Version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - run: pwd
+      - run: cwd
+      - name: Download here-sdk
+        run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fhere-sdk.zip?alt=media&token=89d447c5-43ef-4924-a4c1-b241cd9218c7
+      - name: Download key.jks
+        run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.jks?alt=media&token=fe28aa79-4574-4b47-bb9d-1024b144c1b4
+      - name: Download key.properties
+        run: wget https://firebasestorage.googleapis.com/v0/b/jrpl-dev.appspot.com/o/Flutter-Assets%2Fkey.properties?alt=media&token=5749b5dd-81db-42cb-88db-99384b2f538f
+      - run: ls
       - uses: actions/checkout@v4
         with:
           ref: ${{github.head_ref}}
-      - run: |
-          node update-version.js
-          git config user.name 'Chandan Kalita'
-          git config user.email 'ck3196686@gmail.com'
-          git add .
-          git commit -m "auto - Version updated"
-          git push
+      - run: pwd
+      - run: cwd
+      - run: ls
